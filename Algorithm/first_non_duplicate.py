@@ -13,15 +13,18 @@ def get_first_non_duplicate_value(array):
         item_ascii = ord(str(item))  # 获取对应的ascii码
 
         if first_happen[item_ascii // 32] & (1 << (item_ascii % 32)) == 0:
-            first_happen[item_ascii // 32] = first_happen[item_ascii // 32] | (1 << (item_ascii % 32))
+            first_happen[item_ascii // 32] = first_happen[item_ascii // 32] | \
+                                             (1 << (item_ascii % 32))
         else:
-            re_happen[item_ascii // 32] = re_happen[item_ascii // 32] | (1 << (item_ascii % 32))
+            re_happen[item_ascii // 32] = re_happen[item_ascii // 32] | \
+                                        (1 << (item_ascii % 32))
 
     index = 0
     for i, item in enumerate(array):
         item_ascii = ord(str(item))
 
-        if re_happen[item_ascii // 32] == re_happen[item_ascii // 32] | (1 << (item_ascii % 32)) == 0:
+        if re_happen[item_ascii // 32] == re_happen[item_ascii // 32] | \
+                (1 << (item_ascii % 32)) == 0:
             index = i
             break
 
