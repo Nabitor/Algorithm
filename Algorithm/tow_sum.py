@@ -6,12 +6,15 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        for i in nums:
-            for j in nums:
-                if i + j == target:
-                    print(i, j)
+        d = {}
+        for i, n in enumerate(nums):
+            m = target - n
+            if m in d:
+                return [d[m], i]
+            else:
+                d[n] = i
 
 
 if __name__ == '__main__':
     solution = Solution()
-    solution.twoSum([2, 7, 8, 9], 9)
+    print(solution.twoSum([2, 7, 8, 9], 9))
