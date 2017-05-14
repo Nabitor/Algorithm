@@ -20,6 +20,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+
+        '''
+        我们可以遍历一遍数组，用一个计数器cnt来统计1的个数，
+        方法是如果当前数字为0，
+        那么cnt重置为0，如果不是0，cnt自增1，
+        然后每次更新结果res即可。
+        '''
         sum_, cnt = 0, 0
         for index in nums:
             if index == 0:
