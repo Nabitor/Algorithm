@@ -7,7 +7,7 @@
 class Node(object):
     def __init__(self, data=-1, lchild=None, rchild=None):
         self.data = data
-        self.lchild = lchild
+        self.lchild = lchildD:\DevelopTools\Anaconda3
         self.rchild = rchild
 
 
