@@ -5,9 +5,8 @@
 
 
 class Node(object):
-    """
-        节点结构。
-    """
+    """节点结构"""
+
     def __init__(self, data):
         self.lchild = None
         self.rchild = None
